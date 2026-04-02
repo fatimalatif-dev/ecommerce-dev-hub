@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('SCM Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/fatimalatif-dev/ecommerce-dev-hub.git'
+                git branch: 'dev', url: 'https://github.com/fatimalatif-dev/ecommerce-dev-hub.git'
             }
         }
 
@@ -24,7 +24,20 @@ pipeline {
               }
             }
         }
+
+		stage('Build Docker Image') {
+			    steps {
+				script {
+				    // Build the Docker image using the docker-compose file located in the repository
+				    sh 'docker-compose -f docker-compose.yml build'
+				}
+			    }
+			}
+
+
     }
+
+
     
     post {
         always {
