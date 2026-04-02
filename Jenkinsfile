@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         
-        SONARQUBE_AUTH_TOKEN = credentials('sonar_auth_token')  // Assuming you have saved SonarQube token in Jenkins credentials
+        SONARQUBE_AUTH_TOKEN = credentials('sonar_auth_token')  // saved SonarQube token in Jenkins credentials
         
     }
 
