@@ -40,9 +40,9 @@ sudo apt-get update -y
 echo "Installing Docker..."
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-echo "Enabling Docker service..."
-systemctl enable docker
-systemctl start docker
+# echo "Enabling Docker service..."
+# systemctl enable docker
+# systemctl start docker
 
 # Add user to docker group safely
 if ! groups "$USER" | grep -q docker; then
