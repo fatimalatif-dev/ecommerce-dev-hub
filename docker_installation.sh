@@ -13,8 +13,8 @@ fi
 # echo "Updating system..."
 # sudo apt-get update -y
 
-echo "Installing dependencies..."
-sudo apt-get install -y ca-certificates curl gnupg
+# echo "Installing dependencies..."
+# sudo apt-get install -y ca-certificates curl gnupg
 
 # Add Docker GPG key (only if not exists)
 if [ ! -f /etc/apt/keyrings/docker.gpg ]; then
