@@ -48,7 +48,7 @@ pipeline {
 				script {echo 'Building docker image'
 				    // Build the Docker image using the docker-compose file located in the repository
 
-				    sh 'docker compose -f docker-compose.yml build'
+				    sh 'sudo docker compose -f docker-compose.yml build'
                     echo 'Imaga created'
 				}
 			    }

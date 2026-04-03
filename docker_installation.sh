@@ -11,10 +11,10 @@ if command -v docker &> /dev/null; then
 fi
 
 # echo "Updating system..."
-# sudo apt-get update -y
+sudo apt-get update -y
 
 # echo "Installing dependencies..."
-# sudo apt-get install -y ca-certificates curl gnupg
+sudo apt-get install -y ca-certificates curl gnupg
 
 # Add Docker GPG key (only if not exists)
 if [ ! -f /etc/apt/keyrings/docker.gpg ]; then
@@ -36,7 +36,7 @@ if [ ! -f /etc/apt/sources.list.d/docker.list ]; then
 fi
 
 # echo "Updating package list..."
-# sudo apt-get update -y
+sudo apt-get update -y
 
 echo "Installing Docker..."
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
