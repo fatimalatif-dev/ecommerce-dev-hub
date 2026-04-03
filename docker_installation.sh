@@ -10,8 +10,8 @@ if command -v docker &> /dev/null; then
     exit 0
 fi
 
-echo "Updating system..."
-sudo apt-get update -y
+# echo "Updating system..."
+# sudo apt-get update -y
 
 echo "Installing dependencies..."
 sudo apt-get install -y ca-certificates curl gnupg
