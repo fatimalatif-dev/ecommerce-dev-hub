@@ -50,5 +50,6 @@ if ! groups "$USER" | grep -q docker; then
     usermod -aG docker $USER
 fi
 sudo newgrp docker
+sudo docker ps
 echo "Docker installed successfully!"
 
