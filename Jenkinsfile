@@ -14,16 +14,16 @@ pipeline {
             }
         }
 
-        stage('Run Sonarqube') {
-            environment {
-                scannerHome = tool 'sonarqube_tool';
-            }
-            steps {
-              withSonarQubeEnv(credentialsId: 'sonar_auth_token', installationName: 'sonarqube_server') {
-                sh "${scannerHome}/bin/sonar-scanner"
-              }
-            }
-        }
+        // stage('Run Sonarqube') {
+        //     environment {
+        //         scannerHome = tool 'sonarqube_tool';
+        //     }
+        //     steps {
+        //       withSonarQubeEnv(credentialsId: 'sonar_auth_token', installationName: 'sonarqube_server') {
+        //         sh "${scannerHome}/bin/sonar-scanner"
+        //       }
+        //     }
+        // }
 
 		stage('Build Docker Image') {
 			    steps {
