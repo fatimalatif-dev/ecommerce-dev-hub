@@ -11,7 +11,7 @@ pipeline {
         stage('SCM Checkout') {
             steps {
                 // git branch: 'dev', url: 'https://github.com/fatimalatif-dev/ecommerce-dev-hub.git'
-                
+                checkout scm 
             }
         }
 
