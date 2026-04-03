@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                     // Run the  script after making it executable
-                    sh './docker_installation.sh'  /
+                    sh './docker_installation.sh'  
                 }
             }
         }        
