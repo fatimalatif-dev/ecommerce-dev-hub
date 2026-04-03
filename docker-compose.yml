@@ -11,8 +11,12 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: example
   
   api:
-    image: node:18
+    # image: node:18
+    build:
+      context: .  # Files in the 'src' directory are sent to the daemon
+      dockerfile: Dockerfile
     working_dir: /app
+
     volumes:
       - ./:/app
     ports:

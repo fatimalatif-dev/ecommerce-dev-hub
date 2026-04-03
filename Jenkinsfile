@@ -52,6 +52,7 @@ pipeline {
 				    // Build the Docker image using the docker-compose file located in the repository
 
 				    sh 'docker compose -f docker-compose.yml build'
+
                     echo 'listing the docker images'
                     sh 'sudo docker image ls'
                     
