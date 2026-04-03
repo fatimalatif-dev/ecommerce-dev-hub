@@ -19,9 +19,9 @@ sudo apt-get install -y ca-certificates curl gnupg
 # Add Docker GPG key (only if not exists)
 if [ ! -f /etc/apt/keyrings/docker.gpg ]; then
     echo "Adding Docker GPG key..."
-    mkdir -p /etc/apt/keyrings
+    sudo mkdir -p /etc/apt/keyrings
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
-       gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+      sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 fi
 
 # Add repo (only if not exists)
