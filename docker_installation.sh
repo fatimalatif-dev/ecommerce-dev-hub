@@ -24,6 +24,7 @@ if [ ! -f /etc/apt/keyrings/docker.gpg ]; then
       sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 fi
 
+
 # Add repo (only if not exists)
 if [ ! -f /etc/apt/sources.list.d/docker.list ]; then
     echo "Adding Docker repo..."
@@ -31,7 +32,7 @@ if [ ! -f /etc/apt/sources.list.d/docker.list ]; then
     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
     https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) stable" | \
-     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 fi
 
 echo "Updating package list..."
