@@ -49,6 +49,6 @@ if ! groups "$USER" | grep -q docker; then
     echo "Adding user to docker group..."
     usermod -aG docker $USER
 fi
-
+newgrp docker
 echo "Docker installed successfully!"
 
