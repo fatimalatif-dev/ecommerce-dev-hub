@@ -53,7 +53,7 @@ pipeline {
 
 				    sh 'docker compose -f docker-compose.yml build'
                     echo 'listing the docker images'
-                    sh 'docker image ls'
+                    sh 'sudo docker image ls'
                     
                     echo 'Imaga created'
 				}
