@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         
-        SONARQUBE_AUTH_TOKEN = credentials('sonar_auth_token')  // saved SonarQube token in Jenkins credentials
+        SONARQUBE_AUTH_TOKEN = credentials('sonar_auth_token')  // Saved SonarQube token in Jenkins credentials
         
     }
 
@@ -27,14 +27,14 @@ pipeline {
 
 		stage('Build Docker Image') {
 			    steps {
-				script {
+				script {echo 'Building docker image'
 				    // Build the Docker image using the docker-compose file located in the repository
+
 				    sh 'docker-compose -f docker-compose.yml build'
+                    echo 'Imaga created'
 				}
 			    }
 			}
-
-
     }
 
 
