@@ -51,7 +51,7 @@ pipeline {
 				script {echo 'Building docker image'
 				    // Build the Docker image using the docker-compose file located in the repository
 
-				    sh 'docker compose -f docker-compose.yml build --progress=plan'
+				    sh 'docker compose -f docker-compose.yml build'
                     echo 'listing the docker images'
                     sh 'docker image ls'
                     
