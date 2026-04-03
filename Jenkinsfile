@@ -10,7 +10,8 @@ pipeline {
     stages {
         stage('SCM Checkout') {
             steps {
-                git branch: 'dev', url: 'https://github.com/fatimalatif-dev/ecommerce-dev-hub.git'
+                // git branch: 'dev', url: 'https://github.com/fatimalatif-dev/ecommerce-dev-hub.git'
+                checkout scm 
             }
         }
 
@@ -24,17 +25,37 @@ pipeline {
         //       }
         //     }
         // }
+                
+         stage('Make Script Executable') {
+            steps {
+                script {
+                    // Make the install.sh script executable
+                    sh 'chmod +x ./docker_installation.sh'  // Adjust the path if needed
+                }
+            }
+        }
 
-		stage('Build Docker Image') {
-			    steps {
-				script {echo 'Building docker image'
-				    // Build the Docker image using the docker-compose file located in the repository
+        stage('Run Install Script') {
+            steps {
+                script {
+                    // Run the install script after making it executable
+                    sh './docker_installation.sh'  // Adjust the path if needed
+                }
+            }
+        }        
 
-				    sh 'docker-compose -f docker-compose.yml build'
-                    echo 'Imaga created'
-				}
-			    }
-			}
+
+  
+		// stage('Build Docker Image') {
+		// 	    steps {
+		// 		script {echo 'Building docker image'
+		// 		    // Build the Docker image using the docker-compose file located in the repository
+
+		// 		    sh 'docker compose -f docker-compose.yml build'
+        //             echo 'Imaga created'
+		// 		}
+		// 	    }
+		// 	}
     }
 
 
