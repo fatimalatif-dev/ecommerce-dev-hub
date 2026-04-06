@@ -18,6 +18,15 @@ pipeline {
               }
             }
         }
+
+		stage("Quality Gate") {
+            steps {
+                // Pause the pipeline until SonarQube reports back the result
+                timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
                 
          stage('Make Script Executable') {
             steps {
