@@ -1,12 +1,6 @@
 pipeline {
     agent any
     
-    environment {
-        
-        SONARQUBE_AUTH_TOKEN = credentials('sonar_auth_token')  // Saved SonarQube token in Jenkins credentials
-        
-    }
-
     stages {
         stage('SCM Checkout') {
             steps {
